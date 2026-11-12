@@ -3,6 +3,7 @@ import * as store from './store.js';
 import { $ } from './util.js';
 import { setRerender, toast } from './ui.js';
 import { computeStreak, syncRewards } from './logic/streak.js';
+import './install.js';
 import * as onboarding from './views/onboarding.js';
 import * as home from './views/home.js';
 import * as log from './views/log.js';

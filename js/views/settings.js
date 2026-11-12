@@ -5,6 +5,7 @@ import { suggestedGoal, tdee, bmi } from '../logic/nutrition.js';
 import { tagTotals } from '../logic/stats.js';
 import { topbar, wireBack, rerender, toast, confirmDialog, go } from '../ui.js';
 import { applyTheme } from '../app.js';
+import { installCard, wireInstall } from '../install.js';
 
 export function render(root, r) {
   return r.name === 'tags' ? tags(root) : settings(root);
@@ -18,6 +19,7 @@ function settings(root) {
 
   root.innerHTML = `${topbar('Ajustes', { backHref: '#/home' })}
   <div class="stack">
+    ${installCard()}
     <form class="card stack" id="pf" novalidate>
       <h3>Perfil</h3>
       <label class="field"><span>Nombre</span><input class="input" id="s-name" maxlength="40" value="${esc(p.name)}" required></label>
@@ -65,6 +67,7 @@ function settings(root) {
     </div>
   </div>`;
   wireBack(root);
+  wireInstall(root);
 
   const $ = (id) => root.querySelector(id);
   $('#suggest').addEventListener('click', () => {

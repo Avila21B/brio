@@ -1,9 +1,9 @@
 // Service worker: cachea el shell para funcionar sin conexión.
-const CACHE = 'brio-v2';
+const CACHE = 'brio-v3';
 const SHELL = [
   './', './index.html', './manifest.webmanifest', './css/app.css',
   './icons/icon.svg', './icons/icon-192.png', './icons/icon-512.png',
-  './js/app.js', './js/store.js', './js/util.js', './js/ui.js', './js/actions.js', './js/ui/art.js',
+  './js/app.js', './js/install.js', './js/store.js', './js/util.js', './js/ui.js', './js/actions.js', './js/ui/art.js',
   './js/data/activities.js', './js/data/foods.js', './js/data/exercises.js', './js/data/cards.js',
   './js/logic/streak.js', './js/logic/stats.js', './js/logic/nutrition.js',
   './js/views/onboarding.js', './js/views/home.js', './js/views/log.js', './js/views/gps.js', './js/views/gym.js',

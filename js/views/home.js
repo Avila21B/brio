@@ -7,6 +7,7 @@ import { mascot } from '../ui/art.js';
 import { activity } from '../data/activities.js';
 import { addWater } from '../actions.js';
 import { rerender, toast } from '../ui.js';
+import { installCard, wireInstall } from '../install.js';
 
 export function render(root) {
   const st = get();
@@ -43,6 +44,7 @@ export function render(root) {
   </header>
 
   <section class="stack">
+    ${installCard()}
     <div class="hero">
       <div>${mascot(mood)}</div>
       <div class="bubble">${mascotLine(mood)}</div>
@@ -90,6 +92,7 @@ export function render(root) {
     </div>
   </section>`;
 
+  wireInstall(root);
   root.querySelector('[data-water]').addEventListener('click', () => {
     addWater(250);
     const left = dayNutrition(get()).waterGoal - dayNutrition(get()).water;
